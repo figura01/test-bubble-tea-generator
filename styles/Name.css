@@ -1,0 +1,10 @@
+.name {
+  border-radius: 0 0 10px 10px;
+  padding: 20px 0;
+  background-color: #fff;
+  color: #101;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
