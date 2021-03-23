@@ -1,10 +1,9 @@
-import {useState, useEffect } from 'react';
+import {useState } from 'react';
 
 import Preview from './components/preview/Preview';
 import Generator from './components/Generator';
 import Menu from './components/menu/Menu';
 import Name from './components/Name';
-
 
 import './App.css';
 

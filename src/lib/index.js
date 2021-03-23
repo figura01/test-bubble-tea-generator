@@ -1,6 +1,5 @@
 export const lighter = (col, amt) => {
-  //col = col.slice(1);
-  console.log(col)
+
   const num = parseInt(col,16)
 
   let r = (num >> 16) + amt

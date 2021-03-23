@@ -15,11 +15,8 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
   const colBubbles = ['#8F3939', '#FFCE9F', '#3A3B59'];
   const colGoblets = ['#FF00CC', '#00FF33', '#3300FF'];
 
-  const {name, goblet} = state;
-
   const handlerChange = (e) => {
-    const { name, type } = e.target;
-    console.log(e.target.value)
+    const { name } = e.target;
     if(name=== "taille") {
       setSize(e.target.value);
       handlerState({
@@ -50,9 +47,6 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
 
   const clickColor = (e, index, target) => {
     e.preventDefault();
-    
-    console.log(index);
-    console.log(target);
 
     if(target === 'bubble') {
       setActiveBubbleColor(index);
@@ -121,7 +115,7 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
       {/* SECTION INPUT SET SIZE */}
       <div className="inputs-section">
         <div className="input-grp">
-          <label for="taille" className="input-label">Taille</label>
+          <label htmlFor="taille" className="input-label">Taille</label>
           <input type="range" id="taille" name="taille"
             value={size}
             onChange={
@@ -212,14 +206,15 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
       {/* SECTION SHOW SMILE OR PAILL*/}
       <div className="inputs-section">
         <div className="input-grp">
-          <label className="input-label">Paille</label>
-          <input type="checkbox" name="paille" value={activePaille} checked={state.showPaille} 
+          <label htmlFor="paille" className="input-label">Paille</label>
+          <input id="paille" type="checkbox" name="paille" value={activePaille} checked={state.showPaille} 
             onChange={(e) => {handlerChange(e)}}
           />
         </div>
         <div className="input-grp">
-          <label className="input-label">Smile</label>
-          <input 
+          <label htmlFor="smile" className="input-label">Smile</label>
+          <input
+            id="smile" 
             type="checkbox" value={activeSmile} checked={state.showSmile} name="smile" 
             onChange={(e) => {handlerChange(e)}}
             
