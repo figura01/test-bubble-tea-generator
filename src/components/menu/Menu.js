@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import IconTea from "./icon_tea.svg";
-import IconBubble from './icon_bubble.svg';
-import IconGoblet from './icon_goblet.svg';
+import { ReactComponent as IconTea } from "./icon_tea.svg";
+import { ReactComponent as IconBubble } from './icon_bubble.svg';
+import { ReactComponent as IconGoblet } from './icon_goblet.svg';
 
 import "../../styles/Menu.css";
 
@@ -53,7 +53,7 @@ const Menu = ({ state, handlerState}) => {
           >
           </button>
           <div className="block-btn">
-            <img className="icon" src={IconTea} alt=""/>
+            <IconTea className="icon" />
           </div>
         </li>
 
@@ -66,7 +66,7 @@ const Menu = ({ state, handlerState}) => {
           >
           </button>
           <div className="block-btn">
-            <img className="icon" src={IconGoblet} alt=""/>
+            <IconGoblet className="icon" />
           </div>
         </li>
 
@@ -80,9 +80,9 @@ const Menu = ({ state, handlerState}) => {
             
           </button>
           <div className="block-btn">
-            <img 
+            <IconBubble
               className="icon"
-              src={IconBubble} alt=""
+             
             />
           </div>
           
