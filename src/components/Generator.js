@@ -4,7 +4,7 @@ import '../styles/Generator.css';
 
 const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, fonts}) => {
   const [size, setSize] = useState(state.size);
-
+  const [inputName, setInputName] = useState(state.name);
   const [activeBubbleColor, setActiveBubbleColor] = useState(0);
   const [activeTeaColor, setActiveTeaColor] = useState(0);
   const [activeGobletColor, setActiveGobletColor] = useState(0);
@@ -23,6 +23,14 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
         ...state,
         size: size * 10 + "%"
       })
+
+    } else if (name === 'name'){
+      setInputName(e.target.value);
+      handlerState({
+        ...state,
+        name: e.target.value
+      })
+      
     } else if (name === 'fonts'){
       setSize(e.target.value);
       handlerState({
@@ -78,18 +86,10 @@ const Generator = ({state, handlerState, colorsTea, colorsGoblet, colorsBubble, 
         <div className="input-grp">
           <label className="input-label">Nom:</label>
           <input type="text" name="name"
-            value={
-              state["name"]
-            }
+            value={inputName}
             onChange={
-              (e, state) => {
-                handlerState({
-                  ...state,
-                  name: `${
-                    e.target.value
-                  }`
-                })
-
+              (e) => {
+                handlerChange(e)
               }
             }/>
         </div>
